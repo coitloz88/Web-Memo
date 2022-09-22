@@ -11,6 +11,13 @@ input {
     display: flex;
 }
 
+.memo {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background: grey;
+}
+
 #submitButton {
     height: 20px;
     border: none;

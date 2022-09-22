@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./InputData.css";
+
+//메모 내용과 작성자를 form으로 입력받는 컴포넌트
 function InputText(props) {
   return (
     <article>
@@ -29,6 +31,7 @@ function InputText(props) {
   );
 }
 
+//메모 작성용으로 필요한 데이터와 관련된 로직 컴포넌트
 function InputData() {
   const [memoId, setMemoId] = useState(null);
   const [nextMemoId, setNextMemoID] = useState(1);
@@ -52,8 +55,8 @@ function InputData() {
           setMemoId(nextMemoId);
           setNextMemoID(nextMemoId + 1);
 
-          // console.log(`memo container: ${memoContainer}`);
-          // console.log(`content in memo: ${JSON.stringify(memoContainer)}`);
+          console.log(`memo container: ${newMemoContainer}`);
+          console.log(`content in memo: ${JSON.stringify(newMemoContainer)}`);
         }}
       ></InputText>
     </div>
