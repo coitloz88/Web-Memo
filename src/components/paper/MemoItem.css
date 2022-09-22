@@ -1,0 +1,18 @@
+.MemoItemBlock {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #dddddd;
+
+    border-radius: 10px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#text {
+   flex: 1;
+   font-size: 16px;
+
+   padding: 10px;
+}

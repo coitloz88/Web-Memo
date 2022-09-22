@@ -6,3 +6,13 @@
 1. '작성자'와 '내용' 입력받는 기능 구현
 2. 입력 받은 내용을 local storage에 저장
 3. local storage로부터 내용을 꺼내오기
+
+<details>
+<summary>막힌 곳</summary>
+<div markdown = "1">
+
+* local stoarge 연동
+* 원하는 위치에 원하는 내용 위치시키기
+
+</div>
+</details>

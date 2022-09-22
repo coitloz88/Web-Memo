@@ -1,13 +1,14 @@
 // import logo from './logo.svg';
-// import './App.css';
-import InputData from './InputData';
+//import './App.css'
+import Input from './components/Input';
+import MemoList from './components/paper/MemoList';
+import LocalStorage from './storage/LocalStorage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <InputData></InputData>
-      </header>
+    <div className='template'>
+        <Input />
+        <MemoList />
     </div>
   );
 }
