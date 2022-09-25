@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import MemoItem from "./MemoItem";
 import './MemoList.css';
 

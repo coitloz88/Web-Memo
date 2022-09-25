@@ -32,9 +32,9 @@ function InputText(props) {
 
 function Input(props) {
   //const [showMode, setShowMode] = useState(false);
-  const [memoId, setMemoId] = useState(null);
-  const initNextMemoId = window.localStorage.getItem("lastMemoId") ? window.localStorage.getItem("lastMemoId") : 0;
-  const [nextMemoId, setNextMemoID] = useState(initNextMemoId);
+  const initMemoId = Number(window.localStorage.getItem("lastNextMemoId")) ? Number(window.localStorage.getItem("lastNextMemoId")) : 0;
+  const [memoId, setMemoId] = useState(initMemoId);
+
   const [memoContainer, setMemoContainer] = useState([
   ]);
 
@@ -42,30 +42,19 @@ function Input(props) {
     <div>
       <InputText onCreate = {(_content, _writer)=>{
         const newMemoItem = {
-          id: nextMemoId,
+          id: memoId,
           content: _content,
           writer: _writer,
         };
-        
-        //const newMemoContainer = [...memoContainer];
-        //newMemoContainer.push(newMemoItem);
 
-        //setMemoContainer(newMemoContainer);
-        
-        setMemoId(Number(nextMemoId));
-        setNextMemoID(Number(nextMemoId) + 1);
-
-        //console.log(`memo container: ${newMemoContainer}`);
-        //console.log(`content in memo: ${JSON.stringify(newMemoContainer)}`);
-
-        //TODO: 마지막으로 저장되어있는 memoId를 받아와서 저장해야함
-        //강종되는 경우는 어떻게 해결?
         window.localStorage.setItem("MemoItem" + memoId, JSON.stringify(newMemoItem));
-        window.localStorage.setItem("lastMemoId", memoId);
+        window.localStorage.setItem("lastNextMemoId", Number(memoId + 1));
 
         for(let i = 0; i <= memoId; i++){
           console.log(`local storage 저장 항목: ${window.localStorage.getItem("MemoItem" + i)}`);
         }
+
+        setMemoId(memoId + 1);
       }}></InputText>
     </div>
   );
