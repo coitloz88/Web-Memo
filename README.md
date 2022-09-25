@@ -12,7 +12,7 @@
 <div markdown = "1">
 
 * local stoarge 연동
-* 원하는 위치에 원하는 내용 위치시키기
+* local storage에서 내용 꺼내오기
 
 </div>
 </details>
