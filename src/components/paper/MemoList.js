@@ -1,12 +1,19 @@
 import React, { useState } from "react";
+import { readMemoData } from '../../localStorage';
 import MemoItem from "./MemoItem";
 import './MemoList.css';
 
 function MemoList() {
+    const memoContainer = readMemoData();
+
     return (
         <div className="MemoListBlock"> 
-            <MemoItem content="React 공부하기" writer="이혜민"></MemoItem>
-            <MemoItem content="typescript 공부하기" writer="꼬몽울"></MemoItem>
+            {
+                memoContainer.map(memoItem => {
+                    console.log(`현재 아이템: ${memoItem}, content: ${memoItem.content}`);
+                    <MemoItem content={memoItem.content} writer={memoItem.writer}></MemoItem>
+                })
+            }
         </div>
     );
 }

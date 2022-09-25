@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Input.css";
+import { writeMemoData } from '../localStorage';
 
 function InputText(props) {
   return (
@@ -31,7 +32,6 @@ function InputText(props) {
 }
 
 function Input(props) {
-  //const [showMode, setShowMode] = useState(false);
   const initMemoId = Number(window.localStorage.getItem("lastNextMemoId")) ? Number(window.localStorage.getItem("lastNextMemoId")) : 0;
   const [memoId, setMemoId] = useState(initMemoId);
 
@@ -47,13 +47,7 @@ function Input(props) {
           writer: _writer,
         };
 
-        window.localStorage.setItem("MemoItem" + memoId, JSON.stringify(newMemoItem));
-        window.localStorage.setItem("lastNextMemoId", Number(memoId + 1));
-
-        for(let i = 0; i <= memoId; i++){
-          console.log(`local storage 저장 항목: ${window.localStorage.getItem("MemoItem" + i)}`);
-        }
-
+        writeMemoData(memoId, newMemoItem);
         setMemoId(memoId + 1);
       }}></InputText>
     </div>

@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './MemoItem.css';
 
-function MemoItem({id, content, writer}) {
+function MemoItem({content, writer}) {
+    console.log(`건네받은 Item: ${content}, ${writer}`);
     return (
         <div className="MemoItemBlock">
             <p id="text">{content}</p>
