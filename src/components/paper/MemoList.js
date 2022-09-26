@@ -10,7 +10,7 @@ function MemoList() {
         <div className="MemoListBlock"> 
             {
                 memoContainer.map(memoItem => 
-                    (<MemoItem content={memoItem.content} writer={memoItem.writer}></MemoItem>
+                    (<MemoItem key={memoItem.id} content={memoItem.content} writer={memoItem.writer}></MemoItem>
                 ))
             }
 
