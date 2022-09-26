@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Input.css";
-import { writeMemoData } from '../localStorage';
+import { readMemoData, writeMemoData } from '../localStorage';
 
 function InputText(props) {
   const [inputs, setInputs] = useState({
@@ -60,6 +60,7 @@ function Input(props) {
         };
 
         writeMemoData(memoId, newMemoItem);
+        props.handleMemoChange();
         setMemoId(memoId + 1);
       }}></InputText>
     </div>

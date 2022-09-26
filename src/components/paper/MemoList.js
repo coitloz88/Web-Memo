@@ -3,9 +3,8 @@ import { readMemoData } from '../../localStorage';
 import MemoItem from "./MemoItem";
 import './MemoList.css';
 
-function MemoList() {
-    const memoContainer = readMemoData();
-
+function MemoList({memoContainer}) {
+    //const memoContainer = readMemoData();
     return (
         <div className="MemoListBlock"> 
             {
