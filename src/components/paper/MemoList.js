@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { readMemoData } from '../../localStorage';
 import MemoItem from "./MemoItem";
 import './MemoList.css';
@@ -9,11 +9,11 @@ function MemoList() {
     return (
         <div className="MemoListBlock"> 
             {
-                memoContainer.map(memoItem => {
-                    console.log(`현재 아이템: ${memoItem}, content: ${memoItem.content}`);
-                    <MemoItem content={memoItem.content} writer={memoItem.writer}></MemoItem>
-                })
+                memoContainer.map(memoItem => 
+                    (<MemoItem content={memoItem.content} writer={memoItem.writer}></MemoItem>
+                ))
             }
+
         </div>
     );
 }

@@ -8,11 +8,14 @@
 3. local storage로부터 내용을 꺼내오기
 
 <details>
-<summary>막힌 곳</summary>
+<summary>논의해볼 사항</summary>
 <div markdown = "1">
 
 * local stoarge 연동
 * local storage에서 내용 꺼내오기
+* Memo 배열 저장 방법
+    - 배열 전체를 꺼내와서 뒤에 `newItem`을 붙인 뒤 다시 저장
+    - (현재) 매번 key 새로 생성
 
 </div>
 </details>

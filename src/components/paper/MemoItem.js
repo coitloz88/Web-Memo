@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './MemoItem.css';
 
+
 function MemoItem({content, writer}) {
     console.log(`건네받은 Item: ${content}, ${writer}`);
     return (
